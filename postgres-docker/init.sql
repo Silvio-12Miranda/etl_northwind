@@ -1,0 +1,1 @@
+ALTER USER silvioMiranda WITH SUPERUSER;
