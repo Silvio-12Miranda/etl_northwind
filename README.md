@@ -84,10 +84,74 @@ volumes:
   postgres_data:
 ```
 
-Con pgAdmin visualizamos las estructuras de datos que se crearon apartir del Modelo **Northwind_DWH**
+Con pgAdmin visualizamos las estructuras de datos que se crearon a partir del Modelo **Northwind_DWH**
 
 <div align="center"> 
   <img src="imagenes/modelo_creado.jpg" width="700">
+</div>
+
+
+## 3. Business Intelligence
+
+Las siguientes consultas resuelven toda la seccion 3.
+
+```sql
+-- ¿Qué categoría presentó las mejores ventas durante el año 2016?
+SELECT c."CategoryName", SUM(v."Total_Venta") AS total_ventas
+FROM public."VENTAS" v
+JOIN public."D_PRODUCTOS" p ON v."ProductID" = p."ProductID"
+JOIN public."D_CATEGORIAS" c ON p."CategoryID" = c."CategoryID"
+JOIN public."D_TIEMPO" t ON v."OrderDate" = t."Fecha"
+WHERE t."Año" = 2016
+GROUP BY c."CategoryName"
+ORDER BY total_ventas DESC
+LIMIT 1;
+```
+<div align="center"> 
+  <img src="imagenes/sql1.jpg" width="700">
+</div>
+
+```sql
+-- ¿Cuál fue el empleado con mejor promedio de ventas diarias (en dinero) en el año 2020?
+SELECT e."Nombre_Empleado", AVG(v."Total_Venta") AS promedio_ventas_diarias
+FROM public."VENTAS" v
+JOIN public."D_EMPLEADOS" e ON v."EmployeeID" = e."EmployeeID"
+JOIN public."D_TIEMPO" t ON v."OrderDate" = t."Fecha"
+WHERE t."Año" = 2020
+GROUP BY e."Nombre_Empleado"
+ORDER BY promedio_ventas_diarias DESC
+LIMIT 1;
+```
+<div align="center"> 
+  <img src="imagenes/sql2.jpg" width="700">
+</div>
+
+```sql
+-- ¿Cuál fue el día con mayor cantidad de ventas (en cantidad de operaciones) durante el primer semestre de 2015?
+SELECT t."Fecha", COUNT(v."OrderID") AS cantidad_ventas
+FROM public."VENTAS" v
+JOIN public."D_TIEMPO" t ON v."OrderDate" = t."Fecha"
+WHERE t."Año" = 2015 AND t."Mes" BETWEEN 1 AND 6
+GROUP BY t."Fecha"
+ORDER BY cantidad_ventas DESC
+LIMIT 1;
+```
+<div align="center"> 
+  <img src="imagenes/sql3.jpg" width="700">
+</div>
+
+
+```sql
+-- Históricamente, ¿cuál es el mejor cliente que ha tenido la empresa?
+SELECT c."Nombre_Cliente", SUM(v."Total_Venta") AS total_gastado
+FROM public."VENTAS" v
+JOIN public."D_CLIENTES" c ON v."CustomerID" = c."CustomerID"
+GROUP BY c."Nombre_Cliente"
+ORDER BY total_gastado DESC
+LIMIT 1;
+```
+<div align="center"> 
+  <img src="imagenes/sql4.jpg" width="700">
 </div>
 
 
