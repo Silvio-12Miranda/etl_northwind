@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ```
 ## SOLUCIONES:
 
-1. Modelado de Data Warehouse
+## 1. Modelado de Data Warehouse
 
 El modelo de datos utilizado en esta prueba técnica sigue un esquema en estrella. Este diseño es ampliamente utilizado en Data Warehouses debido a su eficiencia en consultas analíticas y de agregación.
 
@@ -52,6 +52,10 @@ Ahora bien la justificacion por el cual se utilizo este tipo de esquema de estre
 <div align="center"> 
   <img src="imagenes/modelo_estrella.jpg" width="700">
 </div>
+
+## 2. Desarrollo de ETL 
+
+Se monto un contenedor con postgreSQL utilizando Docker-compose para poder tener la permanencia de los datos en el servidor.
 
 
 
