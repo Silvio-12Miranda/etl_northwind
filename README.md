@@ -55,11 +55,40 @@ Ahora bien la justificacion por el cual se utilizo este tipo de esquema de estre
 
 ## 2. Desarrollo de ETL 
 
-Se monto un contenedor con postgreSQL utilizando Docker-compose para poder tener la permanencia de los datos en el servidor.
+Se monto un contenedor con postgreSQL utilizando Docker-compose para poder tener la permanencia de los datos en el servidor, el YAML contine las configuraciones necesarias para poder crear un contenedor con postgreSQL.
 
+<div align="center"> 
+  <img src="imagenes/contenedor_activo.jpg" width="700">
+</div>
 
+ 
+```
+version: '3.8'
 
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_silvio
+    restart: always
+    environment:
+      POSTGRES_USER: silvioMiranda
+      POSTGRES_PASSWORD: Smirlop
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
+volumes:
+  postgres_data:
+```
+
+Con pgAdmin visualizamos las estructuras de datos que se crearon apartir del Modelo **Northwind_DWH**
+
+<div align="center"> 
+  <img src="imagenes/modelo_creado.jpg" width="700">
+</div>
 
 
 
