@@ -20,6 +20,43 @@ Ejecuta el siguiente comando para instalar todas las dependencias:
 ```bash
 pip install -r requirements.txt
 ```
+### SOLUCIONES:
+
+1. Modelado de Data Warehouse
+
+El modelo de datos utilizado en esta prueba técnica sigue un esquema en estrella. Este diseño es ampliamente utilizado en Data Warehouses debido a su eficiencia en consultas analíticas y de agregación.
+
+### Tablas del modelo
+
+Tabla de Hechos:
+- **VENTAS (Ventas registradas con métricas de cantidad y precio total).**
+
+Tablas de Dimensiones:
+- **D_TIEMPO (Dimensión de tiempo con granularidad de fecha, mes y año).**
+- **D_CLIENTES (Información de clientes).**
+- **D_PRODUCTOS (Información de productos y sus categorías).**
+- **D_CATEGORIAS (Categorías de productos).**
+- **D_EMPLEADOS (Vendedores y empleados involucrados en ventas).**
+- **D_REGIONES (Regiones donde ocurren las ventas).**
+
+Ahora bien la justificacion por el cual se utilizo este tipo de esquema de estrella es el siguiente:
+- Tiene un mejor rendimiento en consultas.
+- Permite una rápida agregación y análisis de datos en herramientas de BI.
+- El que este desnormalizada evita cruces costosos en memoria.
+
+![Modelo Estrella](https://raw.githubusercontent.com/silviomiranda/etl_northwind/main/images/modelo_estrella.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Configuración
 
