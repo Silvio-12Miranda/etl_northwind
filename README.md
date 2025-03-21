@@ -1,5 +1,6 @@
-# ETL Northwind - Prueba Técnica
-
+<div align="center">
+  <h1>ETL Northwind - Prueba Técnica</h1>
+</div>
 Este repositorio contiene la solución de la prueba técnica para la implementación de un proceso ETL utilizando **Python, Polars y PostgreSQL**.
 
 ## Requisitos
@@ -20,7 +21,7 @@ Ejecuta el siguiente comando para instalar todas las dependencias:
 ```bash
 pip install -r requirements.txt
 ```
-### SOLUCIONES:
+## SOLUCIONES:
 
 1. Modelado de Data Warehouse
 
@@ -44,14 +45,12 @@ Ahora bien la justificacion por el cual se utilizo este tipo de esquema de estre
 - Permite una rápida agregación y análisis de datos en herramientas de BI.
 - El que este desnormalizada evita cruces costosos en memoria.
 
-![Modelo Estrella](imgenes/modelo_estrella.png)
-
 <div align="center">
-  <h1>Programación Dinámica y Estocástica con Python</h1>
+  <h1>MODELO ESTRELLA DWH</h1>
 </div>
 
 <div align="center"> 
-  <img src="imgenes/modelo_estrella.png" width="500">
+  <img src="imagenes/modelo_estrella.jpg" width="700">
 </div>
 
 
