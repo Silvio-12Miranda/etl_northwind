@@ -8,13 +8,14 @@ Este repositorio contiene la solución de la prueba técnica para la implementac
 Antes de ejecutar el proyecto, asegúrate de tener instalados los siguientes requisitos:
 
 ### Tecnologías utilizadas
-- **Docker**      # Server (contenedor).
-- **Python 3.8+** # Lenguaje de programacion.
-- **PostgreSQL**  # Base de datos.
-- **SQLAlchemy**  # 
-- **Polars**      # Manipulacion de datos.
-- **Psycopg2**    # Para manejo de postgreSQL.
-
+```
+- Docker        # Server (contenedor).
+- Python 3.8+   # Lenguaje de programacion.
+- PostgreSQL    # Base de datos.
+- SQLAlchemy    # Manipulacion de estructuras de datos.
+- Polars        # Manipulacion de datos.
+- Psycopg2      # Para manejo de postgreSQL.
+```
 ### Instalación de dependencias
 Ejecuta el siguiente comando para instalar todas las dependencias:
 
@@ -184,7 +185,7 @@ LIMIT 1;
 ## Estructura del Proyecto
 
 ```
-📂 etl_northwind
+etl_northwind
  ├── config.py             # Configuración de la base de datos
  ├── execute_sql.py        # Creación de tablas en PostgreSQL
  ├── extract.py            # Extracción de datos desde SQLite
