@@ -44,11 +44,15 @@ Ahora bien la justificacion por el cual se utilizo este tipo de esquema de estre
 - Permite una rápida agregación y análisis de datos en herramientas de BI.
 - El que este desnormalizada evita cruces costosos en memoria.
 
-![Modelo Estrella](https://raw.githubusercontent.com/silviomiranda/etl_northwind/main/images/modelo_estrella.png)
+![Modelo Estrella](imgenes/modelo_estrella.png)
 
+<div align="center">
+  <h1>Programación Dinámica y Estocástica con Python</h1>
+</div>
 
-
-
+<div align="center"> 
+  <img src="imgenes/modelo_estrella.png" width="500">
+</div>
 
 
 
