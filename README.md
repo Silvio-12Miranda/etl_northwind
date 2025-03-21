@@ -8,12 +8,12 @@ Este repositorio contiene la solución de la prueba técnica para la implementac
 Antes de ejecutar el proyecto, asegúrate de tener instalados los siguientes requisitos:
 
 ### Tecnologías utilizadas
-- **Docker**
-- **Python 3.8+**
-- **PostgreSQL**
-- **SQLAlchemy**
-- **Polars**
-- **Psycopg2**
+- **Docker**      # Server (contenedor).
+- **Python 3.8+** # Lenguaje de programacion.
+- **PostgreSQL**  # Base de datos.
+- **SQLAlchemy**  # 
+- **Polars**      # Manipulacion de datos.
+- **Psycopg2**    # Para manejo de postgreSQL.
 
 ### Instalación de dependencias
 Ejecuta el siguiente comando para instalar todas las dependencias:
@@ -157,17 +157,9 @@ LIMIT 1;
 
 
 
-
 ## Configuración
 
-1. **Configurar la base de datos**
-   
-   Crea una base de datos en PostgreSQL:
-   ```sql
-   CREATE DATABASE northwind;
-   ```
-
-2. **Configurar las credenciales de la base de datos**
+1. **Configurar las credenciales de la base de datos**
    
    Modifica el archivo `etl_northwind/config.py` con las credenciales correctas:
    ```python
@@ -180,7 +172,7 @@ LIMIT 1;
    }
    ```
 
-3. **Verificar la existencia del script SQL**
+2. **Verificar la existencia del script SQL**
    
    Asegúrate de que el archivo `Northwind.sql` se encuentra en:
    ```
@@ -189,7 +181,7 @@ LIMIT 1;
 
    Este archivo contiene la estructura de las tablas y se ejecutará automáticamente al iniciar el ETL.
 
-## 🏗️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 📂 etl_northwind
@@ -202,7 +194,9 @@ LIMIT 1;
  ├── requirements.txt      # Dependencias del proyecto
 ```
 
-## Ejecución del ETL
+<div align="center">
+  <h2>Ejecución del ETL</h2>
+</div>
 
 Para ejecutar el proceso ETL, usa el siguiente comando:
 
@@ -212,10 +206,10 @@ python -m etl_northwind.main
 
 El proceso se ejecutará en los siguientes pasos:
 
-1️**[Paso 1] Creación de tablas**: Se verifican y crean las tablas si no existen.
+1 **[Paso 1]** Creación de tablas**: Se verifican y crean las tablas si no existen.
 
-2️**[Paso 2] Extracción de datos**: Se extraen datos desde la base de datos.
+2 **[Paso 2]** Extracción de datos**: Se extraen datos desde la base de datos.
 
-3️**[Paso 3] Transformación de datos**: Se transforman los datos evitando duplicados.
+3 **[Paso 3]** Transformación de datos**: Se transforman los datos evitando duplicados.
 
-4️**[Paso 4] Carga de datos**: Se insertan solo los datos nuevos en PostgreSQL.
+4 **[Paso 4]** Carga de datos**: Se insertan solo los datos nuevos en PostgreSQL.
